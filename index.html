@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Gradient Generator</title>
+</head>
+<style>
+    body {
+        font-family: "Ink Free";
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        min-height: 94vh;
+    }
+    
+    .gradient {
+        width: 40vw;
+        height: 40vw;
+        border-radius: 10px;
+    }
+    
+    h4 {
+        text-align: center;
+        font-weight: bolder;
+    }
+</style>
+
+<body>
+
+    <div class="gradient">
+
+    </div>
+
+    <h4 class="gradientColors">
+
+    </h4>
+
+    <script>
+        let target = document.querySelector(".gradient");
+
+        let text = document.querySelector(".gradientColors");
+
+
+        // setInterval(() => {
+        var c10 = Math.floor(Math.random() * 255);
+        var c11 = Math.floor(Math.random() * 255);
+        var c12 = Math.floor(Math.random() * 255);
+
+        var c20 = Math.floor(Math.random() * 255);
+        var c21 = Math.floor(Math.random() * 255);
+        var c22 = Math.floor(Math.random() * 255);
+
+        var orientation = "to top right";
+        var color1 = `rgb(${c10},${c11},${c12})`;
+        var color2 = `rgb(${c20},${c21},${c22})`;
+
+        text.textContent = `Color One : ${color1} and Color Two : ${color2}`;
+        text.style.color = color1;
+
+        target.style.backgroundImage = 'linear-gradient(' +
+            orientation + ', ' + color1 + ', ' + color2 + ')';
+        // }, 2000);
+    </script>
+
+</body>
+
+</html>
